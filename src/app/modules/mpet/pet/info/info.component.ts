@@ -3,7 +3,7 @@ import {PetService} from '../../../../services/mpet/pet.service';
 import {PetType} from '../../../../models/Pet';
 
 @Component({
-    selector: 'app-sim-detail-info',
+    selector: 'app-mpet-pet-detail-info',
     templateUrl: './info.component.html',
     styleUrls: ['./info.component.css']
 })

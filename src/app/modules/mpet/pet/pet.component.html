@@ -19,10 +19,18 @@
                 <div class="card-body">
                     <form novalidate (ngSubmit)="searchPets()" #form="ngForm">
                         <div class="form-group row">
-                            <div class="col-md-10">
-                                <input [(ngModel)]="petService.search.partten" type="text" id="key" name="key"
+                            <div class="col-md-6">
+                                <input [(ngModel)]="petService.search.key" type="text" id="key" name="key"
                                        class="form-control"
-                                       placeholder="Tìm kiếm theo ">
+                                       placeholder="Tìm kiếm theo tên pet, tên chủ">
+                            </div>
+                            <div class="col-md-4">
+                                <select [(ngModel)]="petService.search.type" class="form-control" name="type" id="type">
+                                    <option value="">Loại pet</option>
+                                    <option *ngFor="let type of types" [value]="type.id">
+                                        {{type.name}}
+                                    </option>
+                                </select>
                             </div>
                             <div class="col-md-2">
                                 <button type="button" (click)="searchPets()"
@@ -31,21 +39,23 @@
                             </div>
                         </div>
                     </form>
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-bordered table-sm">
                         <thead>
                         <tr>
-                            <th>Tên Pet/ Loại Pet</th>
-                            <th>Chủ sở hữu</th>
-                            <th>Giới tính</th>
-                            <th class="text-right">Ngày sinh</th>
-                            <th class="text-right">Ngày chết</th>
+                            <th width="8%">Tên Pet</th>
+                            <th width="10%">Loại Pet</th>
+                            <th width="15%">Chủ sở hữu</th>
+                            <th width="5%">Giới tính</th>
+                            <th width="8%" class="text-right">Ngày sinh</th>
+                            <th width="8%" class="text-right">Ngày chết</th>
                             <th>Story</th>
-                            <th class="text-right">Tác vụ</th>
+                            <th width="5%" class="text-right">Tác vụ</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody *ngIf="pets && pets.length > 0">
                         <tr *ngFor="let item of pets">
-                            <td>{{item.name}} {{item.type.name}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.pet_type.name}}</td>
                             <td>{{item.owners}}</td>
                             <td>{{item.gender}}</td>
                             <td class="text-right">{{item.birth_day}}</td>
@@ -64,7 +74,7 @@
                     </table>
                     <pagination [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="petService.search.page"
                                 (pageChanged)="pageChanged($event)"
-                                class="pagination-sm pull-right" [maxSize]="6"
+                                class="pagination-sm pull-right" [maxSize]="6" [itemsPerPage]="petService.search.limit"
                                 previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;"
                                 lastText="&raquo;"></pagination>
                 </div>

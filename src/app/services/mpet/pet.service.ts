@@ -15,9 +15,9 @@ import {Pet} from '../../models/Pet';
 @Injectable()
 export class PetService {
     static instance: PetService;
-    private moduleUri = 'pet/';
+    private moduleUri = 'mpet/pet/';
     private handleError: HandleError;
-    public search = {partten: '', start_price: 0, end_price: null, page_size: 10, page: 1};
+    public search = {key: '', type: '', limit: 15, page: 1};
     public pet: Pet;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,
@@ -36,7 +36,7 @@ export class PetService {
     reset() {
         this.pet = {
             id: null
-            , type: null
+            , pet_type: null
             , owners: null
             , name: ''
             , gender: null
@@ -57,7 +57,9 @@ export class PetService {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}search`;
         let params = new HttpParams();
         Object.keys(this.search).map((key) => {
-            params = params.append(key, this.search[key]);
+            if (this.search[key]) {
+                params = params.append(key, this.search[key]);
+            }
         });
         return this.http.get<any>(url, {params: params})
             .pipe(

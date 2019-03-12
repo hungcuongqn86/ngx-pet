@@ -8,7 +8,7 @@ export interface PetType {
 
 export interface Pet {
     id: number;
-    type: PetType;
+    pet_type: PetType;
     owners: Owner[];
     name: string;
     gender: number;

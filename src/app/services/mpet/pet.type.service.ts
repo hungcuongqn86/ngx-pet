@@ -15,9 +15,9 @@ import {PetType} from '../../models/Pet';
 @Injectable()
 export class PetTypeService {
     static instance: PetTypeService;
-    private moduleUri = 'pettype/';
+    private moduleUri = 'mpet/pettype/';
     private handleError: HandleError;
-    public search = {partten: '', start_price: 0, end_price: null, page_size: 10, page: 1};
+    public search = {};
     public pettype: PetType;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, TemplateRef} from '@angular/core';
 import {Router} from '@angular/router';
 import {PetService} from '../../../services/mpet/pet.service';
+import {PetTypeService} from '../../../services/mpet/pet.type.service';
 import {Pet, PetType} from '../../../models/Pet';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -22,13 +23,14 @@ export class PetComponent implements OnInit {
     modalRef: BsModalRef;
     errorMessage = [];
 
-    constructor(private uploaderService: UploaderService, public petService: PetService,
+    constructor(private uploaderService: UploaderService, public petService: PetService, public petTypeService: PetTypeService,
                 private router: Router, private modalService: BsModalService) {
 
     }
 
     ngOnInit() {
         this.searchPets();
+        this.getTypes();
     }
 
     pageChanged(event: any): void {
@@ -64,7 +66,11 @@ export class PetComponent implements OnInit {
     }
 
     public getTypes() {
-        const search = {page_size: 1000, page: 1};
+        this.petTypeService.getPetTypes()
+            .subscribe(types => {
+                this.types = types.data;
+            });
+
     }
 
     openModal(template: TemplateRef<any>, pet) {

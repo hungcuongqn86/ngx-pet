@@ -3,6 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {PetComponent} from './pet/pet.component';
 import {PetDetailComponent} from './pet/pet.detail.component';
+import {PetTypeComponent} from './type/pet.type.component';
+import {PetTypeDetailComponent} from './type/pet.type.detail.component';
 
 const routes: Routes = [
     {
@@ -19,6 +21,24 @@ const routes: Routes = [
     },
     {
         path: 'pet/edit/:id', component: PetDetailComponent,
+        data: {
+            title: 'Thêm mới Pet'
+        }
+    },
+    {
+        path: 'pettype/list', component: PetTypeComponent,
+        data: {
+            title: 'Pet'
+        }
+    },
+    {
+        path: 'pettype/add', component: PetTypeDetailComponent,
+        data: {
+            title: 'Thêm mới Pet'
+        }
+    },
+    {
+        path: 'pettype/edit/:id', component: PetTypeDetailComponent,
         data: {
             title: 'Thêm mới Pet'
         }
