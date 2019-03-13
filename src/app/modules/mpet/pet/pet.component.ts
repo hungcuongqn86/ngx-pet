@@ -58,10 +58,12 @@ export class PetComponent implements OnInit {
     }
 
     public searchPets() {
+        this.petService.showLoading(true);
         this.petService.getPets()
             .subscribe(pets => {
                 this.pets = pets.data.data;
                 this.totalItems = pets.data.total;
+                this.petService.showLoading(false);
             });
     }
 
