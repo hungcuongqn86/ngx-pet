@@ -37,10 +37,16 @@ export class PetService {
         this.pet = {
             id: null
             , pet_type: null
+            , pet_type_id: null
+            , pet_breed: null
+            , pet_breed_id: null
             , owners: null
             , name: ''
             , gender: null
             , gender_name: ''
+            , colour: ''
+            , microchip: ''
+            , special_markings: ''
             , birth_day: ''
             , dead_day: ''
             , age: null
@@ -52,6 +58,14 @@ export class PetService {
             , created_at: ''
             , updated_at: ''
         };
+    }
+
+    getGenders(): Observable<any> {
+        const url = Util.getUri(apiV1Url) + `${this.moduleUri}gender`;
+        return this.http.get<any>(url)
+            .pipe(
+                catchError(this.handleError('getGenders', []))
+            );
     }
 
     getPets(): Observable<any> {

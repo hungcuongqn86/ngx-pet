@@ -21,7 +21,7 @@ export const navItems = [
         children: [
             {
                 name: 'Pet',
-                url: '/mpet/pet/list',
+                url: '/mpet/pet',
                 icon: 'icon-puzzle'
             },
             {

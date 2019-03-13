@@ -43,7 +43,7 @@ export class PetComponent implements OnInit {
     }
 
     public editPet(id) {
-        this.router.navigate([`/mpet/pet/${id}`]);
+        this.router.navigate([`/mpet/pet/edit/${id}`]);
     }
 
     public deletePet() {

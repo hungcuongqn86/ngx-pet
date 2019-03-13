@@ -5,6 +5,7 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
 
 import {PetService} from '../../services/mpet/pet.service';
 import {PetTypeService} from '../../services/mpet/pet.type.service';
+import {PetBreedService} from '../../services/mpet/pet.breed.service';
 import {PetComponent} from './pet/pet.component';
 import {PetDetailComponent} from './pet/pet.detail.component';
 import {OwnersComponent} from './pet/owners/owners.component';
@@ -26,7 +27,7 @@ import {SharedModule} from '../../shared.module';
         PetTypeDetailComponent
     ],
     exports: [],
-    providers: [PetService, PetTypeService]
+    providers: [PetService, PetTypeService, PetBreedService]
 })
 export class MpetModule {
 }

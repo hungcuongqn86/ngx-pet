@@ -8,7 +8,7 @@ import {PetTypeDetailComponent} from './type/pet.type.detail.component';
 
 const routes: Routes = [
     {
-        path: 'pet/list', component: PetComponent,
+        path: 'pet', component: PetComponent,
         data: {
             title: 'Pet'
         }
