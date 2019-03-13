@@ -11,6 +11,7 @@ export interface Pet {
     pet_type: PetType;
     owners: Owner[];
     name: string;
+    gender_name: string;
     gender: number;
     birth_day: string;
     dead_day: string;

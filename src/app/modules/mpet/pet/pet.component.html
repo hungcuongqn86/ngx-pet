@@ -45,9 +45,9 @@
                             <th width="8%">Tên Pet</th>
                             <th width="10%">Loại Pet</th>
                             <th width="15%">Chủ sở hữu</th>
-                            <th width="5%">Giới tính</th>
-                            <th width="8%" class="text-right">Ngày sinh</th>
-                            <th width="8%" class="text-right">Ngày chết</th>
+                            <th width="8%">Giới tính</th>
+                            <th width="10%" class="text-right">Ngày sinh</th>
+                            <th width="10%" class="text-right">Ngày chết</th>
                             <th>Story</th>
                             <th width="5%" class="text-right">Tác vụ</th>
                         </tr>
@@ -59,7 +59,7 @@
                             <td>
                                 <p *ngFor="let owner of item.owners">{{owner.name}}</p>
                             </td>
-                            <td>{{item.gender}}</td>
+                            <td>{{item.gender_name}}</td>
                             <td class="text-right">{{item.birth_day}}</td>
                             <td class="text-right">{{item.dead_day}}</td>
                             <td>{{item.story}}</td>

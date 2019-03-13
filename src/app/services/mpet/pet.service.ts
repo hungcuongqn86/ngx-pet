@@ -40,6 +40,7 @@ export class PetService {
             , owners: null
             , name: ''
             , gender: null
+            , gender_name: ''
             , birth_day: ''
             , dead_day: ''
             , age: null
