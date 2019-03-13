@@ -21,7 +21,6 @@ export class PetComponent implements OnInit {
     types: PetType[];
     totalItems = 0;
     modalRef: BsModalRef;
-    errorMessage = [];
 
     constructor(private uploaderService: UploaderService, public petService: PetService, public petTypeService: PetTypeService,
                 private router: Router, private modalService: BsModalService) {
