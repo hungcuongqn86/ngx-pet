@@ -27,11 +27,6 @@ export class PetTypeComponent implements OnInit {
         this.searchPetType();
     }
 
-    pageChanged(event: any): void {
-        this.petTypeService.search.page = event.page;
-        this.searchPetType();
-    }
-
     public addBase() {
         this.petTypeService.pettype.id = null;
         this.router.navigate(['/mpet/pettype/add']);

@@ -56,7 +56,9 @@
                         <tr *ngFor="let item of pets">
                             <td>{{item.name}}</td>
                             <td>{{item.pet_type.name}}</td>
-                            <td>{{item.owners}}</td>
+                            <td>
+                                <p *ngFor="let owner of item.owners">{{owner.name}}</p>
+                            </td>
                             <td>{{item.gender}}</td>
                             <td class="text-right">{{item.birth_day}}</td>
                             <td class="text-right">{{item.dead_day}}</td>
