@@ -95,7 +95,10 @@
     <div class="form-group row">
         <label class="col-md-3 col-form-label" for="birth_day">Ngày sinh</label>
         <div class="col-md-9">
-            <input [(ngModel)]="petService.pet.birth_day" type="text" id="birth_day"
+            <input [(ngModel)]="petService.pet.birth_day" bsDatepicker
+                   [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY', containerClass: 'theme-dark-blue' }"
+                   placement="bottom left"
+                   type="text" id="birth_day"
                    name="birth_day"
                    class="form-control"
                    placeholder="Ngày sinh">
@@ -104,7 +107,10 @@
     <div class="form-group row">
         <label class="col-md-3 col-form-label" for="dead_day">Ngày mất</label>
         <div class="col-md-9">
-            <input [(ngModel)]="petService.pet.dead_day" type="text" id="dead_day"
+            <input [(ngModel)]="petService.pet.dead_day" bsDatepicker
+                   [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY', containerClass: 'theme-dark-blue' }"
+                   placement="bottom left"
+                   type="text" id="dead_day"
                    name="dead_day"
                    class="form-control"
                    placeholder="Ngày mất">
