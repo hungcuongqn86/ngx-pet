@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {PetBreedService} from '../../../services/mpet/pet.breed.service';
+import {PetType} from '../../../models/Pet';
 import {PetTypeService} from '../../../services/mpet/pet.type.service';
 
 @Component({
@@ -10,30 +12,42 @@ import {PetTypeService} from '../../../services/mpet/pet.type.service';
 })
 
 export class PetBreedDetailComponent implements OnInit {
-    constructor(private router: Router, private route: ActivatedRoute, public pettypeService: PetTypeService) {
+    types: PetType[];
+
+    constructor(private router: Router, private route: ActivatedRoute,
+                public petbreedService: PetBreedService, public petTypeService: PetTypeService) {
         this.route.params.subscribe(params => {
             if (params['id']) {
-                this.pettypeService.pettype.id = params['id'];
+                this.petbreedService.petbreed.id = params['id'];
             }
         });
     }
 
     ngOnInit() {
-        if (this.pettypeService.pettype.id !== null) {
-            this.pettypeService.getPetType(this.pettypeService.pettype.id)
-                .subscribe(pettype => {
-                    this.pettypeService.pettype = pettype.data.pettype;
+        this.getTypes();
+        if (this.petbreedService.petbreed.id !== null) {
+            this.petbreedService.getPetBreed(this.petbreedService.petbreed.id)
+                .subscribe(petbreed => {
+                    this.petbreedService.petbreed = petbreed.data.pettype;
                 });
         } else {
-            this.pettypeService.reset();
+            this.petbreedService.reset();
         }
     }
 
+    public getTypes() {
+        this.petTypeService.getPetTypes()
+            .subscribe(types => {
+                this.types = types.data;
+            });
+
+    }
+
     public updateAgency() {
-        this.pettypeService.updatePetType();
+        this.petbreedService.updatePetBreed();
     }
 
     public backlist() {
-        this.router.navigate(['/mpet/pettype']);
+        this.router.navigate(['/mpet/petbreed']);
     }
 }

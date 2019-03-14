@@ -17,22 +17,43 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Chi tiết loại thú</strong>
+                    <strong>Chi tiết giống thú</strong>
                 </div>
                 <div class="card-body">
                     <div class="col-md-12 mb-4">
                         <form novalidate #form="ngForm" class="form-horizontal">
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="name">
-                                    Tên loại thú cưng <code class="highlighter-rouge">*</code>
+                                <label class="col-md-3 col-form-label" for="pet_type_id">
+                                    Loại thú cưng <code class="highlighter-rouge">*</code>
                                 </label>
                                 <div class="col-md-9">
-                                    <input [(ngModel)]="pettypeService.pettype.name"
+                                    <select [(ngModel)]="petbreedService.petbreed.pet_type_id" #pet_type_id="ngModel"
+                                            required class="form-control"
+                                            name="pet_type_id" id="pet_type_id">
+                                        <option value="null">Chọn loại thú cưng ...</option>
+                                        <option *ngFor="let type of types" [value]="type.id">
+                                            {{type.name}}
+                                        </option>
+                                    </select>
+                                    <div [hidden]="pet_type_id.valid || pet_type_id.untouched">
+                                <span *ngIf="pet_type_id.errors && pet_type_id.errors.required"
+                                      class="badge badge-warning">
+                                    Phải chọn loại thú cưng!
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="name">
+                                    Tên giống thú <code class="highlighter-rouge">*</code>
+                                </label>
+                                <div class="col-md-9">
+                                    <input [(ngModel)]="petbreedService.petbreed.name"
                                            #name="ngModel" type="text"
                                            id="name" name="name"
                                            required
                                            class="form-control"
-                                           placeholder="Tên đại lý">
+                                           placeholder="Tên giống thú">
                                     <div [hidden]="name.valid || name.untouched">
                                 <span *ngIf="name.errors && name.errors.required"
                                       class="badge badge-warning">
