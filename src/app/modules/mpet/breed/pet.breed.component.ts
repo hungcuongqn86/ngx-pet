@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, TemplateRef} from '@angular/core';
 import {Router} from '@angular/router';
-import {PetTypeService} from '../../../services/mpet/pet.type.service';
-import {PetType} from '../../../models/Pet';
+import {PetBreedService} from '../../../services/mpet/pet.breed.service';
+import {PetBreed} from '../../../models/Pet';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
@@ -13,11 +13,11 @@ import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 
 export class PetBreedComponent implements OnInit {
-    pettype: PetType;
-    pettypes: PetType[];
+    petbreed: PetBreed;
+    petbreeds: PetBreed[];
     modalRef: BsModalRef;
 
-    constructor(public petTypeService: PetTypeService,
+    constructor(public petBreedService: PetBreedService,
                 private router: Router, private modalService: BsModalService) {
 
     }
@@ -27,18 +27,18 @@ export class PetBreedComponent implements OnInit {
     }
 
     public addBase() {
-        this.petTypeService.pettype.id = null;
-        this.router.navigate(['/mpet/pettype/add']);
+        this.petBreedService.petbreed.id = null;
+        this.router.navigate(['/mpet/petbreed/add']);
     }
 
     public editBase(id) {
-        this.router.navigate([`/mpet/pettype/edit/${id}`]);
+        this.router.navigate([`/mpet/petbreed/edit/${id}`]);
     }
 
     public deleteBase() {
-        if (this.pettype) {
-            this.pettype.is_deleted = 1;
-            this.petTypeService.editPetType(this.pettype)
+        if (this.petbreed) {
+            this.petbreed.is_deleted = 1;
+            this.petBreedService.editPetBreed(this.petbreed)
                 .subscribe(res => {
                     this.searchPetType();
                 });
@@ -46,16 +46,16 @@ export class PetBreedComponent implements OnInit {
     }
 
     public searchPetType() {
-        this.petTypeService.showLoading(true);
-        this.petTypeService.getPetTypes()
-            .subscribe(pettypes => {
-                this.pettypes = pettypes.data;
-                this.petTypeService.showLoading(false);
+        this.petBreedService.showLoading(true);
+        this.petBreedService.getPetBreeds()
+            .subscribe(petbreeds => {
+                this.petbreeds = petbreeds.data;
+                this.petBreedService.showLoading(false);
             });
     }
 
-    openModal(template: TemplateRef<any>, pettype) {
-        this.pettype = pettype;
+    openModal(template: TemplateRef<any>, petbreed) {
+        this.petbreed = petbreed;
         this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
     }
 

@@ -10,14 +10,14 @@ import {apiV1Url} from '../../const';
 import {LoadingService} from '../../loading.service';
 
 import {Router} from '@angular/router';
-import {PetBreed} from '../../models/Pet';
+import {PetBreed, PetType} from '../../models/Pet';
 
 @Injectable()
 export class PetBreedService {
     static instance: PetBreedService;
     private moduleUri = 'mpet/petbreed/';
     private handleError: HandleError;
-    public search = {};
+    public search = {key: '', pet_type_id: null};
     public petbreed: PetBreed;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,
@@ -51,6 +51,52 @@ export class PetBreedService {
         return this.http.get<any>(url, {params: params})
             .pipe(
                 catchError(this.handleError('getPetBreeds', []))
+            );
+    }
+
+    getPetBreed(id): Observable<any> {
+        const url = Util.getUri(apiV1Url) + `${this.moduleUri}detail/${id}`;
+        return this.http.get<any>(url)
+            .pipe(
+                catchError(this.handleError('getPetBreed', []))
+            );
+    }
+
+    updatePetBreed() {
+        if (this.petbreed.id === null) {
+            this.addPetBreed(this.petbreed).subscribe(
+                res => {
+                    this.updateSuccess(res);
+                }
+            );
+        } else {
+            this.editPetBreed(this.petbreed).subscribe(
+                res => {
+                    this.updateSuccess(res);
+                }
+            );
+        }
+    }
+
+    private updateSuccess(res: any) {
+        if (res.status) {
+            this.router.navigate(['/mpet/petbreed']);
+        }
+    }
+
+    public addPetBreed(pet: PetBreed): Observable<any> {
+        const url = Util.getUri(apiV1Url) + `${this.moduleUri}create`;
+        return this.http.post<PetBreed>(url, pet)
+            .pipe(
+                catchError(this.handleError('addPetBreed', pet))
+            );
+    }
+
+    public editPetBreed(pet: PetBreed): Observable<any> {
+        const url = Util.getUri(apiV1Url) + `${this.moduleUri}update`;
+        return this.http.put<PetBreed>(url, pet)
+            .pipe(
+                catchError(this.handleError('editPetBreed', pet))
             );
     }
 }
