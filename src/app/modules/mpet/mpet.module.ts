@@ -13,6 +13,8 @@ import {InfoComponent} from './pet/info/info.component';
 import {MediaComponent} from './pet/media/media.component';
 import {PetTypeComponent} from './type/pet.type.component';
 import {PetTypeDetailComponent} from './type/pet.type.detail.component';
+import {PetBreedComponent} from './breed/pet.breed.component';
+import {PetBreedDetailComponent} from './breed/pet.breed.detail.component';
 
 import {MpetRoutingModule} from './mpet.routing.module';
 import {SharedModule} from '../../shared.module';
@@ -26,7 +28,9 @@ import {SharedModule} from '../../shared.module';
         InfoComponent,
         MediaComponent,
         PetTypeComponent,
-        PetTypeDetailComponent
+        PetTypeDetailComponent,
+        PetBreedComponent,
+        PetBreedDetailComponent
     ],
     exports: [],
     providers: [PetService, PetTypeService, PetBreedService]

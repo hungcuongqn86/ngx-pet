@@ -31,7 +31,7 @@ export const navItems = [
             },
             {
                 name: 'Pet breed',
-                url: '/mpet/breed',
+                url: '/mpet/petbreed',
                 icon: 'fa fa-sitemap'
             }
         ]

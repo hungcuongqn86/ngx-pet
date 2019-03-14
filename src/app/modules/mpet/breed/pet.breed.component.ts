@@ -6,13 +6,13 @@ import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
-    selector: 'app-mpet-pettype',
-    templateUrl: './pet.type.component.html',
-    styleUrls: ['./pet.type.component.css'],
+    selector: 'app-mpet-petbreed',
+    templateUrl: './pet.breed.component.html',
+    styleUrls: ['./pet.breed.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class PetTypeComponent implements OnInit {
+export class PetBreedComponent implements OnInit {
     pettype: PetType;
     pettypes: PetType[];
     modalRef: BsModalRef;

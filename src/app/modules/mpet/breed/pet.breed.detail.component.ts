@@ -3,13 +3,13 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {PetTypeService} from '../../../services/mpet/pet.type.service';
 
 @Component({
-    selector: 'app-mpet-pettype-detail',
-    templateUrl: './pet.type.detail.component.html',
-    styleUrls: ['./pet.type.detail.component.css'],
+    selector: 'app-mpet-petbreed-detail',
+    templateUrl: './pet.breed.detail.component.html',
+    styleUrls: ['./pet.breed.detail.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class PetTypeDetailComponent implements OnInit {
+export class PetBreedDetailComponent implements OnInit {
     constructor(private router: Router, private route: ActivatedRoute, public pettypeService: PetTypeService) {
         this.route.params.subscribe(params => {
             if (params['id']) {
