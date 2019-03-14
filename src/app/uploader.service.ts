@@ -16,7 +16,7 @@ export interface Res {
     name: string;
     size: number;
     progress: number;
-    data: { url: string; };
+    data: Array<{ id: number, url: string }>;
     message: string;
     status: boolean;
 }
@@ -36,7 +36,6 @@ export class UploaderService {
     // }
 
     upload(file: File) {
-        console.log(file);
         if (!file) {
             return;
         }
@@ -63,7 +62,7 @@ export class UploaderService {
     private getEventMessage(event: HttpEvent<any>, file: File) {
         const res: Res = {
             type: '',
-            name: file.name, size: file.size, progress: 0, data: {url: ''}
+            name: file.name, size: file.size, progress: 0, data: null
             , message: '', status: false
         };
         switch (event.type) {
@@ -96,7 +95,7 @@ export class UploaderService {
     private handleError(file: File) {
         const res: Res = {
             type: '',
-            name: file.name, size: file.size, progress: 0, data: {url: ''}
+            name: file.name, size: file.size, progress: 0, data: null
             , message: '', status: false
         };
         const userMessage = `${file.name} upload failed.`;

@@ -11,6 +11,7 @@ import {UploaderService} from '../../../../uploader.service';
 })
 
 export class MediaComponent {
+    public images = [];
 
     constructor(public petService: PetService, private uploaderService: UploaderService) {
     }
@@ -21,7 +22,10 @@ export class MediaComponent {
                 this.uploaderService.upload(input.files[i]).subscribe(
                     res => {
                         if (res.status) {
-                            console.log(res);
+                            for (let j = 0; j < res.data.length; j++) {
+                                this.images.push(res.data[j]);
+                            }
+                            console.log(this.images);
                         }
                         input.value = null;
                     }
