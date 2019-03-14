@@ -10,7 +10,7 @@ import {apiV1Url} from '../../const';
 import {LoadingService} from '../../loading.service';
 
 import {Router} from '@angular/router';
-import {Pet} from '../../models/Pet';
+import {Media, Pet} from '../../models/Pet';
 
 @Injectable()
 export class PetService {
@@ -58,6 +58,8 @@ export class PetService {
             , story: ''
             , diary: ''
             , guest_book: ''
+            , pet_media: null
+            , images: ''
             , status: null
             , is_deleted: 0
             , created_at: ''

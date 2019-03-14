@@ -18,6 +18,11 @@ export interface Gender {
     name: string;
 }
 
+export interface Media {
+    id: number;
+    url: string;
+}
+
 export interface Pet {
     id: number;
     pet_type_id: number;
@@ -43,6 +48,8 @@ export interface Pet {
     diary: string;
     guest_book: string;
     status: number;
+    pet_media: Media[];
+    images: string;
     is_deleted: number;
     created_at: string;
     updated_at: string;

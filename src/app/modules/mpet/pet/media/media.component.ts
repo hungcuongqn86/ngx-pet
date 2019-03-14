@@ -14,6 +14,7 @@ export class MediaComponent {
     public images = [];
 
     constructor(public petService: PetService, private uploaderService: UploaderService) {
+        this.images = this.petService.pet.pet_media;
     }
 
     public uploadExc(input: HTMLInputElement) {
@@ -25,7 +26,6 @@ export class MediaComponent {
                             for (let j = 0; j < res.data.length; j++) {
                                 this.images.push(res.data[j]);
                             }
-                            console.log(this.images);
                         }
                         input.value = null;
                     }
