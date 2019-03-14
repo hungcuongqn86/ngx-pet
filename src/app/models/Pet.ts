@@ -9,6 +9,7 @@ export interface PetType {
 export interface PetBreed {
     id: number;
     pet_type_id: number;
+    pet_type: PetType;
     name: string;
     is_deleted: number;
 }

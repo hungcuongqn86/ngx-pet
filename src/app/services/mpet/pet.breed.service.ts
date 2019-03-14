@@ -38,6 +38,7 @@ export class PetBreedService {
             id: null
             , name: ''
             , pet_type_id: 0
+            , pet_type: null
             , is_deleted: 0
         };
     }
