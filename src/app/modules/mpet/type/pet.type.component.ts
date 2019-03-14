@@ -15,7 +15,6 @@ import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 export class PetTypeComponent implements OnInit {
     pettype: PetType;
     pettypes: PetType[];
-    totalItems = 0;
     modalRef: BsModalRef;
 
     constructor(public petTypeService: PetTypeService,
@@ -33,7 +32,7 @@ export class PetTypeComponent implements OnInit {
     }
 
     public editBase(id) {
-        this.router.navigate([`/mpet/pettype/${id}`]);
+        this.router.navigate([`/mpet/pettype/edit/${id}`]);
     }
 
     public deleteBase() {
@@ -49,8 +48,7 @@ export class PetTypeComponent implements OnInit {
     public searchPetType() {
         this.petTypeService.getPetTypes()
             .subscribe(pettypes => {
-                this.pettypes = pettypes.data.data;
-                this.totalItems = pettypes.data.total;
+                this.pettypes = pettypes.data;
             });
     }
 

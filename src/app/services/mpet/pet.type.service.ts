@@ -17,7 +17,7 @@ export class PetTypeService {
     static instance: PetTypeService;
     private moduleUri = 'mpet/pettype/';
     private handleError: HandleError;
-    public search = {};
+    public search = {key: ''};
     public pettype: PetType;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,

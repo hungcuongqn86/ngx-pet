@@ -26,7 +26,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'pettype/list', component: PetTypeComponent,
+        path: 'pettype', component: PetTypeComponent,
         data: {
             title: 'Pet'
         }

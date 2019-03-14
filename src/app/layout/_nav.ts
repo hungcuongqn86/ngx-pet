@@ -4,11 +4,11 @@ export const navItems = [
         url: '/dashboard',
         icon: 'icon-speedometer'
     },
-    {
+    /*{
         name: 'Version',
         url: '/version',
         icon: 'icon-star'
-    },
+    },*/
     {
         name: 'Owner',
         url: '/owner',
@@ -26,14 +26,19 @@ export const navItems = [
             },
             {
                 name: 'Pet type',
-                url: '/mpet/pettype/list',
+                url: '/mpet/pettype',
                 icon: 'cui-graph'
+            },
+            {
+                name: 'Pet breed',
+                url: '/mpet/breed',
+                icon: 'fa fa-sitemap'
             }
         ]
     },
-    {
+    /*{
         name: 'Settings',
         url: '/#',
         icon: 'icon-settings',
-    }
+    }*/
 ];
