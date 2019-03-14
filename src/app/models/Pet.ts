@@ -23,6 +23,9 @@ export interface Pet {
     pet_type_id: number;
     pet_type: PetType;
     owners: Owner[];
+    owner_id: number;
+    owner_name: string;
+    owner_phone: string;
     name: string;
     pet_breed_id: number;
     pet_breed: PetBreed;

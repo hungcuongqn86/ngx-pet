@@ -41,6 +41,9 @@ export class PetService {
             , pet_breed: null
             , pet_breed_id: null
             , owners: null
+            , owner_id: null
+            , owner_name: null
+            , owner_phone: null
             , name: ''
             , gender: null
             , gender_name: ''
@@ -93,6 +96,7 @@ export class PetService {
     }
 
     updatePet() {
+        this.showLoading(true);
         if (this.pet.id === null) {
             this.addPet(this.pet).subscribe(
                 res => {
@@ -110,8 +114,9 @@ export class PetService {
 
     private updateSuccess(res: any) {
         if (res.status) {
-            this.router.navigate(['/mpet/pet']);
+            // this.router.navigate(['/mpet/pet']);
         }
+        this.showLoading(false);
     }
 
     public addPet(pet: Pet): Observable<any> {

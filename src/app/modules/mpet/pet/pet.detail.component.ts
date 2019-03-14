@@ -23,6 +23,11 @@ export class PetDetailComponent implements OnInit {
             this.petService.getPet(this.petService.pet.id)
                 .subscribe(pet => {
                     this.petService.pet = pet.data.pet;
+                    if (this.petService.pet.owners.length > 0) {
+                        this.petService.pet.owner_id = this.petService.pet.owners[0].id;
+                        this.petService.pet.owner_name = this.petService.pet.owners[0].name;
+                        this.petService.pet.owner_phone = this.petService.pet.owners[0].phone_number;
+                    }
                 });
         } else {
             this.petService.reset();

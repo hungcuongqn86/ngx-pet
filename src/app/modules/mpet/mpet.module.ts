@@ -10,6 +10,7 @@ import {PetComponent} from './pet/pet.component';
 import {PetDetailComponent} from './pet/pet.detail.component';
 import {OwnersComponent} from './pet/owners/owners.component';
 import {InfoComponent} from './pet/info/info.component';
+import {MediaComponent} from './pet/media/media.component';
 import {PetTypeComponent} from './type/pet.type.component';
 import {PetTypeDetailComponent} from './type/pet.type.detail.component';
 
@@ -23,6 +24,7 @@ import {SharedModule} from '../../shared.module';
         PetDetailComponent,
         OwnersComponent,
         InfoComponent,
+        MediaComponent,
         PetTypeComponent,
         PetTypeDetailComponent
     ],
