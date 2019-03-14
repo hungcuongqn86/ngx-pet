@@ -54,14 +54,20 @@
                         </thead>
                         <tbody *ngIf="pets && pets.length > 0">
                         <tr *ngFor="let item of pets">
-                            <td>{{item.name}}</td>
-                            <td>{{item.pet_type.name}}</td>
+                            <td>
+                                <p>{{item.name}}</p>
+                                <img *ngIf="item.pet_media.length" src="{{item.pet_media[0].url}}">
+                            </td>
+                            <td>
+                                {{item.pet_type.name}}
+                                <p *ngIf="item.pet_breed">{{item.pet_breed.name}}</p>
+                            </td>
                             <td>
                                 <p *ngFor="let owner of item.owners">{{owner.name}}</p>
                             </td>
                             <td>{{item.gender_name}}</td>
-                            <td class="text-right">{{item.birth_day}}</td>
-                            <td class="text-right">{{item.dead_day}}</td>
+                            <td class="text-right">{{item.birth_day_vi}}</td>
+                            <td class="text-right">{{item.dead_day_vi}}</td>
                             <td>{{item.story}}</td>
                             <td class="text-right">
                                 <button (click)="editPet(item.id)" class="btn btn-sm btn-ghost-primary" type="button">

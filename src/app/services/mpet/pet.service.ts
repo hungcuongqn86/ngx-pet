@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import * as moment from 'moment';
 
 import {Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
@@ -44,6 +45,8 @@ export class PetService {
             , owner_id: null
             , owner_name: null
             , owner_phone: null
+            , facebook: null
+            , email: null
             , name: ''
             , gender: null
             , gender_name: ''
@@ -99,6 +102,12 @@ export class PetService {
 
     updatePet() {
         this.showLoading(true);
+        if (this.pet.birth_day_vi) {
+            this.pet.birth_day = moment(this.pet.birth_day_vi).format('YYYY-MM-DD');
+        }
+        if (this.pet.dead_day_vi) {
+            this.pet.dead_day = moment(this.pet.dead_day_vi).format('YYYY-MM-DD');
+        }
         if (this.pet.id === null) {
             this.addPet(this.pet).subscribe(
                 res => {

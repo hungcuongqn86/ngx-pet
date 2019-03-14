@@ -1,4 +1,62 @@
 <form novalidate #form="ngForm" class="form-horizontal">
+    <div *ngIf="!petService.pet.id" class="form-group row">
+        <label class="col-md-3 col-form-label" for="owner_name">
+            Tên chủ nhân <code class="highlighter-rouge">*</code>
+        </label>
+        <div class="col-md-9">
+            <input [(ngModel)]="petService.pet.owner_name" #owner_name="ngModel" type="text" id="owner_name"
+                   name="owner_name"
+                   required
+                   class="form-control"
+                   placeholder="Tên chủ nhân">
+            <div [hidden]="owner_name.valid || owner_name.untouched">
+                                <span *ngIf="owner_name.errors && owner_name.errors.required"
+                                      class="badge badge-warning">
+                                    Phải nhập Tên chủ thú!
+                                </span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!petService.pet.id" class="form-group row">
+        <label class="col-md-3 col-form-label" for="owner_phone">
+            Số điện thoại <code class="highlighter-rouge">*</code>
+        </label>
+        <div class="col-md-9">
+            <input [(ngModel)]="petService.pet.owner_phone" #owner_phone="ngModel" type="text" id="owner_phone"
+                   name="owner_phone"
+                   required
+                   class="form-control"
+                   placeholder="Số điện thoại">
+            <div [hidden]="owner_phone.valid || owner_phone.untouched">
+                                <span *ngIf="owner_phone.errors && owner_phone.errors.required"
+                                      class="badge badge-warning">
+                                    Phải nhập Số điện thoại chủ thú!
+                                </span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!petService.pet.id" class="form-group row">
+        <label class="col-md-3 col-form-label" for="facebook">
+            Facebook
+        </label>
+        <div class="col-md-9">
+            <input [(ngModel)]="petService.pet.facebook" #facebook="ngModel" type="text" id="facebook"
+                   name="facebook"
+                   class="form-control"
+                   placeholder="Facebook">
+        </div>
+    </div>
+    <div *ngIf="!petService.pet.id" class="form-group row">
+        <label class="col-md-3 col-form-label" for="email">
+            Email
+        </label>
+        <div class="col-md-9">
+            <input [(ngModel)]="petService.pet.email" #email="ngModel" type="text" id="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Email">
+        </div>
+    </div>
     <div class="form-group row">
         <label class="col-md-3 col-form-label" for="name">
             Tên thú cưng <code class="highlighter-rouge">*</code>

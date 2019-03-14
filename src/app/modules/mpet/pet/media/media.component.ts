@@ -12,9 +12,9 @@ import {UploaderService} from '../../../../uploader.service';
 
 export class MediaComponent {
     public images = [];
+    public imagesAdd = [];
 
     constructor(public petService: PetService, private uploaderService: UploaderService) {
-        this.images = this.petService.pet.pet_media;
     }
 
     public uploadExc(input: HTMLInputElement) {
@@ -25,6 +25,8 @@ export class MediaComponent {
                         if (res.status) {
                             for (let j = 0; j < res.data.length; j++) {
                                 this.images.push(res.data[j]);
+                                this.imagesAdd.push(res.data[j].id);
+                                this.petService.pet.images = this.imagesAdd.join(',');
                             }
                         }
                         input.value = null;

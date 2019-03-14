@@ -31,6 +31,8 @@ export interface Pet {
     owner_id: number;
     owner_name: string;
     owner_phone: string;
+    facebook: string;
+    email: string;
     name: string;
     pet_breed_id: number;
     pet_breed: PetBreed;
