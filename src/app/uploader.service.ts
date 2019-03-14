@@ -9,7 +9,7 @@ import {catchError, last, map, tap} from 'rxjs/operators';
 
 import {LoadingService} from './loading.service';
 import {Util} from './helper/lib';
-import {apiUrl} from './const';
+import {apiV1Url} from './const';
 
 export interface Res {
     type: string;
@@ -36,13 +36,14 @@ export class UploaderService {
     // }
 
     upload(file: File) {
+        console.log(file);
         if (!file) {
             return;
         }
         // XHR progress events.
-        const url = Util.getUri(apiUrl) + `sys/upload`;
+        const url = Util.getUri(apiV1Url) + `media/upload`;
         const formData = new FormData();
-        formData.append('fileimport', file);
+        formData.append('files', file);
         const req = new HttpRequest('POST', url, formData, {
             reportProgress: true
         });
