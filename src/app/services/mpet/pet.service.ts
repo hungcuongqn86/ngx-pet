@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import * as moment from 'moment';
 
 import {Observable} from 'rxjs';
@@ -143,6 +143,17 @@ export class PetService {
         return this.http.put<Pet>(url, pet)
             .pipe(
                 catchError(this.handleError('editPet', pet))
+            );
+    }
+
+    public deletePet(pet: Pet): Observable<any> {
+        const url = Util.getUri(apiV1Url) + `${this.moduleUri}delete`;
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: [pet.id]
+        };
+        return this.http.delete(url, httpOptions)
+            .pipe(
+                catchError(this.handleError('deletePet', pet))
             );
     }
 }

@@ -48,8 +48,7 @@ export class PetComponent implements OnInit {
 
     public deletePet() {
         if (this.pet) {
-            this.pet.is_deleted = 1;
-            this.petService.editPet(this.pet)
+            this.petService.deletePet(this.pet)
                 .subscribe(res => {
                     this.searchPets();
                 });
