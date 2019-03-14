@@ -37,7 +37,7 @@ export class PetBreedService {
         this.petbreed = {
             id: null
             , name: ''
-            , pet_type_id: 0
+            , pet_type_id: null
             , pet_type: null
             , is_deleted: 0
         };
