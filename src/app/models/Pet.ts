@@ -32,7 +32,9 @@ export interface Pet {
     microchip: string;
     special_markings: string;
     birth_day: string;
+    birth_day_vi: string;
     dead_day: string;
+    dead_day_vi: string;
     age: number;
     story: string;
     diary: string;

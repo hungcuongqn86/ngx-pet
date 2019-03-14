@@ -48,7 +48,9 @@ export class PetService {
             , microchip: ''
             , special_markings: ''
             , birth_day: ''
+            , birth_day_vi: ''
             , dead_day: ''
+            , dead_day_vi: ''
             , age: null
             , story: ''
             , diary: ''
