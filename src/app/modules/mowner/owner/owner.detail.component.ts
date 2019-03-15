@@ -22,7 +22,7 @@ export class OwnerDetailComponent implements OnInit {
         if (this.ownerService.owner.id !== null) {
             this.ownerService.getOwner(this.ownerService.owner.id)
                 .subscribe(owner => {
-                    this.ownerService.owner = owner.data.pet;
+                    this.ownerService.owner = owner.data.owner;
                 });
         } else {
             this.ownerService.reset();

@@ -5,7 +5,9 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
 
 import {OwnerService} from '../../services/mowner/owner.service';
 import {OwnerComponent} from './owner/owner.component';
-import {DetailComponent} from './owner/detail.component';
+import {OwnerDetailComponent} from './owner/owner.detail.component';
+import {InfoComponent} from './owner/info/info.component';
+import {PetsComponent} from './owner/pets/pets.component';
 
 import {MownerRoutingModule} from './mowner.routing.module';
 import {SharedModule} from '../../shared.module';
@@ -14,7 +16,9 @@ import {SharedModule} from '../../shared.module';
     imports: [CommonModule, FormsModule, MownerRoutingModule, SharedModule, CollapseModule.forRoot()],
     declarations: [
         OwnerComponent,
-        DetailComponent
+        OwnerDetailComponent,
+        InfoComponent,
+        PetsComponent
     ],
     exports: [],
     providers: [OwnerService]

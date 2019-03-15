@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
-import {PetService} from '../../../../services/mpet/pet.service';
+import {OwnerService} from '../../../../services/mowner/owner.service';
 
 @Component({
-    selector: 'app-mpet-pet-detail-owners',
-    templateUrl: './owners.component.html',
-    styleUrls: ['./owners.component.css']
+    selector: 'app-mowner-owner-detail-pets',
+    templateUrl: './pets.component.html',
+    styleUrls: ['./pets.component.css']
 })
 
-export class OwnersComponent {
-    constructor(public petService: PetService) {
+export class PetsComponent {
+    constructor(public ownerService: OwnerService) {
 
     }
 }

@@ -71,7 +71,7 @@ export class OwnerService {
 
     private updateSuccess(res: any) {
         if (res.status) {
-            this.router.navigate(['/owner']);
+            // this.router.navigate(['/owner']);
         }
     }
 
