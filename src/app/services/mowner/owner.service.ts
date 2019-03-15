@@ -9,6 +9,7 @@ import {Util} from '../../helper/lib';
 import {apiV1Url} from '../../const';
 import {Router} from '@angular/router';
 import {Owner} from '../../models/Owner';
+import {LoadingService} from '../../loading.service';
 
 @Injectable()
 export class OwnerService {
@@ -18,7 +19,7 @@ export class OwnerService {
     public search = {key: '', page_size: 10, page: 1};
     public owner: Owner;
 
-    constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler) {
+    constructor(private router: Router, private loadingService: LoadingService, private http: HttpClient, httpErrorHandler: HttpErrorHandler) {
         this.handleError = httpErrorHandler.createHandleError('OwnerService');
         if (!this.owner) {
             this.reset();
@@ -26,10 +27,14 @@ export class OwnerService {
         return OwnerService.instance = OwnerService.instance || this;
     }
 
+    showLoading(value: boolean) {
+        this.loadingService.setLoading(value);
+    }
+
     reset() {
         this.owner = {
             id: null, name: null, gender: null, phone_number: null, facebook: null, email: null
-            , status: null, is_deleted: 0, created_at: '', updated_at: ''
+            , status: 1, is_deleted: 0, created_at: '', updated_at: ''
         };
     }
 
@@ -54,6 +59,7 @@ export class OwnerService {
     }
 
     updateOwner() {
+        this.showLoading(true);
         if (this.owner.id === null) {
             this.addOwner(this.owner).subscribe(
                 res => {
@@ -73,6 +79,7 @@ export class OwnerService {
         if (res.status) {
             // this.router.navigate(['/owner']);
         }
+        this.showLoading(false);
     }
 
     public addOwner(owner: Owner): Observable<any> {
