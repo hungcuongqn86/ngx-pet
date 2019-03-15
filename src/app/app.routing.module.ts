@@ -27,8 +27,8 @@ const appRoutes: Routes = [
                     title: 'Version'
                 }
             }, {
-                path: 'owner',
-                loadChildren: './modules/owner/owner.module#OwnerModule',
+                path: 'mowner',
+                loadChildren: './modules/mowner/mowner.module#MownerModule',
                 data: {
                     title: 'Owner'
                 }

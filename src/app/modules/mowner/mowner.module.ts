@@ -4,14 +4,14 @@ import {FormsModule} from '@angular/forms';
 import {CollapseModule} from 'ngx-bootstrap/collapse';
 
 import {OwnerService} from '../../services/mowner/owner.service';
-import {OwnerComponent} from './owner.component';
-import {DetailComponent} from './detail.component';
+import {OwnerComponent} from './owner/owner.component';
+import {DetailComponent} from './owner/detail.component';
 
-import {OwnerRoutingModule} from './owner.routing.module';
+import {MownerRoutingModule} from './mowner.routing.module';
 import {SharedModule} from '../../shared.module';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, OwnerRoutingModule, SharedModule, CollapseModule.forRoot()],
+    imports: [CommonModule, FormsModule, MownerRoutingModule, SharedModule, CollapseModule.forRoot()],
     declarations: [
         OwnerComponent,
         DetailComponent
@@ -19,5 +19,5 @@ import {SharedModule} from '../../shared.module';
     exports: [],
     providers: [OwnerService]
 })
-export class OwnerModule {
+export class MownerModule {
 }

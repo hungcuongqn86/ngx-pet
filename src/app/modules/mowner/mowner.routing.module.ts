@@ -1,18 +1,24 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {OwnerComponent} from './owner.component';
-import {DetailComponent} from './detail.component';
+import {OwnerComponent} from './owner/owner.component';
+import {DetailComponent} from './owner/detail.component';
 
 const routes: Routes = [
     {
-        path: '', component: OwnerComponent,
+        path: 'owner', component: OwnerComponent,
         data: {
             title: 'Chủ pet'
         }
     },
     {
-        path: ':id', component: DetailComponent,
+        path: 'owner/add', component: DetailComponent,
+        data: {
+            title: 'Thêm chủ pet'
+        }
+    },
+    {
+        path: 'owner/edit/:id', component: DetailComponent,
         data: {
             title: 'Sửa chủ pet'
         }
@@ -25,7 +31,7 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class OwnerRoutingModule {
+export class MownerRoutingModule {
     constructor() {
     }
 }

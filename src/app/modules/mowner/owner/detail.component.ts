@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {OwnerService} from '../../services/mowner/owner.service';
+import {OwnerService} from '../../../services/mowner/owner.service';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
@@ -36,6 +36,6 @@ export class DetailComponent implements OnInit {
     }
 
     public backlist() {
-        this.router.navigate(['/owner']);
+        this.router.navigate(['/mowner/owner']);
     }
 }

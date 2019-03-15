@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, TemplateRef} from '@angular/core';
 import {Router} from '@angular/router';
-import {OwnerService} from '../../services/mowner/owner.service';
-import {Owner} from '../../models/Owner';
+import {OwnerService} from '../../../services/mowner/owner.service';
+import {Owner} from '../../../models/Owner';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
@@ -32,8 +32,13 @@ export class OwnerComponent implements OnInit {
         this.searchOwners();
     }
 
+    public addOwner() {
+        this.ownerService.owner.id = null;
+        this.router.navigate(['/mowner/owner/add']);
+    }
+
     public editOwner(id) {
-        this.router.navigate([`/owner/${id}`]);
+        this.router.navigate([`/mowner/owner/edit/${id}`]);
     }
 
     public deleteOwner() {

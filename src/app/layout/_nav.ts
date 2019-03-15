@@ -11,7 +11,7 @@ export const navItems = [
     },*/
     {
         name: 'Owner',
-        url: '/owner',
+        url: '/mowner/owner',
         icon: 'cui-people'
     },
     {
