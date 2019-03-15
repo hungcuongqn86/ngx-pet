@@ -4,17 +4,17 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
-import {HttpErrorHandler, HandleError} from '../http-error-handler.service';
-import {Util} from '../helper/lib';
-import {apiV1Url} from '../const';
+import {HttpErrorHandler, HandleError} from '../../http-error-handler.service';
+import {Util} from '../../helper/lib';
+import {apiV1Url} from '../../const';
 import {Router} from '@angular/router';
-import {Owner} from '../models/Owner';
+import {Owner} from '../../models/Owner';
 
 @Injectable()
 export class OwnerService {
     static instance: OwnerService;
     private handleError: HandleError;
-    private moduleUri = 'owner/';
+    private moduleUri = 'mowner/owner/';
     public search = {key: '', page_size: 10, page: 1};
     public owner: Owner;
 

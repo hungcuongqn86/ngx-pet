@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {CollapseModule} from 'ngx-bootstrap/collapse';
 
-import {OwnerService} from '../../services/owner.service';
+import {OwnerService} from '../../services/mowner/owner.service';
 import {OwnerComponent} from './owner.component';
 import {DetailComponent} from './detail.component';
 
