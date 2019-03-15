@@ -27,7 +27,7 @@
                                 <ng-template tabHeading><i class="icon-list"></i> &nbsp;Thông tin cơ bản</ng-template>
                                 <app-mpet-pet-detail-info></app-mpet-pet-detail-info>
                             </tab>
-                            <tab>
+                            <tab *ngIf="this.petService.pet.id !== null">
                                 <ng-template tabHeading><i class="cui-user"></i> &nbsp;Thông tin chủ pet</ng-template>
                                 <app-mpet-pet-detail-owners></app-mpet-pet-detail-owners>
                             </tab>
@@ -35,12 +35,12 @@
                                 <ng-template tabHeading><i class="fa fa-file-image-o"></i> &nbsp;Media</ng-template>
                                 <app-mpet-pet-detail-media></app-mpet-pet-detail-media>
                             </tab>
-                            <tab>
+                            <tab *ngIf="this.petService.pet.id !== null">
                                 <ng-template tabHeading><i class="fa fa-history"></i> &nbsp;Lịch sử khám chữa bệnh
                                 </ng-template>
                                 <p>...</p>
                             </tab>
-                            <tab>
+                            <tab *ngIf="this.petService.pet.id !== null">
                                 <ng-template tabHeading><i class="fa fa-sitemap"></i> &nbsp;Phả hệ
                                 </ng-template>
                                 <p>...</p>

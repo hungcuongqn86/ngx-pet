@@ -55,7 +55,7 @@
                         <tbody *ngIf="pets && pets.length > 0">
                         <tr *ngFor="let item of pets">
                             <td>
-                                <p>{{item.name}}</p>
+                                <p><i class="fa fa-paw"></i> {{item.name}}</p>
                                 <img *ngIf="item.pet_media.length" src="{{item.pet_media[0].url}}">
                             </td>
                             <td>
@@ -63,7 +63,7 @@
                                 <p *ngIf="item.pet_breed">{{item.pet_breed.name}}</p>
                             </td>
                             <td>
-                                <p *ngFor="let owner of item.owners">{{owner.name}}</p>
+                                <p *ngFor="let owner of item.owners"><i class="fa fa-user"></i> {{owner.name}}</p>
                             </td>
                             <td>{{item.gender_name}}</td>
                             <td class="text-right">{{item.birth_day_vi}}</td>

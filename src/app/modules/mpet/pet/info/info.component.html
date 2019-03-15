@@ -1,4 +1,5 @@
 <form novalidate #form="ngForm" class="form-horizontal">
+    <h6 *ngIf="!petService.pet.id"><i class="fa fa-user"></i> Chủ thú</h6>
     <div *ngIf="!petService.pet.id" class="form-group row">
         <label class="col-md-3 col-form-label" for="owner_name">
             Tên chủ nhân <code class="highlighter-rouge">*</code>
@@ -57,6 +58,8 @@
                    placeholder="Email">
         </div>
     </div>
+    <hr *ngIf="!petService.pet.id">
+    <h6 *ngIf="!petService.pet.id"><i class="fa fa-paw"></i> Thông tin thú</h6>
     <div class="form-group row">
         <label class="col-md-3 col-form-label" for="name">
             Tên thú cưng <code class="highlighter-rouge">*</code>
