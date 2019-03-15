@@ -1,16 +1,14 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OwnerService} from '../../../services/mowner/owner.service';
 
 @Component({
-    selector: 'app-owner-detail',
-    templateUrl: './detail.component.html',
-    styleUrls: ['./detail.component.css'],
-    encapsulation: ViewEncapsulation.None
+    selector: 'app-mowner-owner-detail',
+    templateUrl: './owner.detail.component.html',
+    styleUrls: ['./owner.detail.component.css']
 })
 
-export class DetailComponent implements OnInit {
-
+export class OwnerDetailComponent implements OnInit {
     constructor(private router: Router, private route: ActivatedRoute
         , public ownerService: OwnerService) {
         this.route.params.subscribe(params => {
@@ -23,8 +21,8 @@ export class DetailComponent implements OnInit {
     ngOnInit() {
         if (this.ownerService.owner.id !== null) {
             this.ownerService.getOwner(this.ownerService.owner.id)
-                .subscribe(member => {
-                    this.ownerService.owner = member.data.member;
+                .subscribe(owner => {
+                    this.ownerService.owner = owner.data.pet;
                 });
         } else {
             this.ownerService.reset();
