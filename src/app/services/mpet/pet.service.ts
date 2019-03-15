@@ -18,7 +18,7 @@ export class PetService {
     static instance: PetService;
     private moduleUri = 'mpet/pet/';
     private handleError: HandleError;
-    public search = {key: '', pettype: '', limit: 15, page: 1};
+    public search = {key: '', pettype: '', owner: null, limit: 15, page: 1};
     public pet: Pet;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,
@@ -149,7 +149,7 @@ export class PetService {
     public deletePet(pet: Pet): Observable<any> {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}delete`;
         const httpOptions = {
-            headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: [pet.id]
+            headers: new HttpHeaders({'Content-Type': 'application/json'}), body: [pet.id]
         };
         return this.http.delete(url, httpOptions)
             .pipe(

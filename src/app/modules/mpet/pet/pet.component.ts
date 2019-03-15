@@ -24,7 +24,7 @@ export class PetComponent implements OnInit {
 
     constructor(private uploaderService: UploaderService, public petService: PetService, public petTypeService: PetTypeService,
                 private router: Router, private modalService: BsModalService) {
-
+        this.petService.search = {key: '', pettype: '', owner: null, limit: 15, page: 1};
     }
 
     ngOnInit() {

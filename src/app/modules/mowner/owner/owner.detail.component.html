@@ -27,7 +27,7 @@
                                 <ng-template tabHeading><i class="icon-list"></i> &nbsp;Thông tin cơ bản</ng-template>
                                 <app-mowner-owner-detail-info></app-mowner-owner-detail-info>
                             </tab>
-                            <tab>
+                            <tab *ngIf="ownerService.owner.id !== null">
                                 <ng-template tabHeading><i class="fa fa-paw"></i> &nbsp;Danh sách pet</ng-template>
                                 <app-mowner-owner-detail-pets></app-mowner-owner-detail-pets>
                             </tab>

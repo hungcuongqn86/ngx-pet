@@ -37,7 +37,6 @@
                             <th>Tên - Phone number</th>
                             <th>Facebook</th>
                             <th>Email</th>
-                            <th>Trạng thái</th>
                             <th class="text-right">Tác vụ</th>
                         </tr>
                         </thead>
@@ -46,7 +45,6 @@
                             <td><i class="fa fa-user"></i> {{item.name}} - <i class="fa fa-phone-square"></i> <a href="{{item.phone_number}}"> {{item.phone_number}}</a></td>
                             <td><i class="fa fa-facebook-square"></i> <a href="{{item.facebook}}"> {{item.facebook}}</a></td>
                             <td><i class="fa fa-envelope-square"></i> <a href="{{item.email}}"> {{item.email}}</a></td>
-                            <td>{{item.status}}</td>
                             <td class="text-right">
                                 <button (click)="editOwner(item.id)" class="btn btn-sm btn-ghost-primary"
                                         type="button">

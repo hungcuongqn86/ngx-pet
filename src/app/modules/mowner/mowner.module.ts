@@ -11,6 +11,7 @@ import {PetsComponent} from './owner/pets/pets.component';
 
 import {MownerRoutingModule} from './mowner.routing.module';
 import {SharedModule} from '../../shared.module';
+import {PetService} from '../../services/mpet/pet.service';
 
 @NgModule({
     imports: [CommonModule, FormsModule, MownerRoutingModule, SharedModule, CollapseModule.forRoot()],
@@ -21,7 +22,7 @@ import {SharedModule} from '../../shared.module';
         PetsComponent
     ],
     exports: [],
-    providers: [OwnerService]
+    providers: [OwnerService, PetService]
 })
 export class MownerModule {
 }

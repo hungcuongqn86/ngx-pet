@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {OwnerService} from '../../../../services/mowner/owner.service';
+import {PetService} from '../../../../services/mpet/pet.service';
+import {Pet} from '../../../../models/Pet';
 
 @Component({
     selector: 'app-mowner-owner-detail-pets',
@@ -8,7 +10,17 @@ import {OwnerService} from '../../../../services/mowner/owner.service';
 })
 
 export class PetsComponent {
-    constructor(public ownerService: OwnerService) {
+    pets: Pet[];
 
+    constructor(public ownerService: OwnerService, public petService: PetService) {
+        this.searchPets();
+    }
+
+    public searchPets() {
+        this.petService.search = {key: '', pettype: '', owner: this.ownerService.owner.id, limit: 100, page: 1};
+        this.petService.getPets()
+            .subscribe(pets => {
+                this.pets = pets.data.data;
+            });
     }
 }

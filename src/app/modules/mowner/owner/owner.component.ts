@@ -52,10 +52,12 @@ export class OwnerComponent implements OnInit {
     }
 
     public searchOwners() {
+        this.ownerService.showLoading(true);
         this.ownerService.getOwners()
             .subscribe(owners => {
                 this.owners = owners.data.data;
                 this.totalItems = owners.data.total;
+                this.ownerService.showLoading(false);
             });
     }
 
