@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
-import {tokens_key, apiUrl} from './const';
+import {tokens_key, apiUrl, apiV1Url} from './const';
 
 import {Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {HttpErrorHandler, HandleError} from './http-error-handler.service';
+import {Util} from './helper/lib';
 
 export interface FooInterface {
     status: string;
@@ -63,7 +64,7 @@ export class AuthService {
     }
 
     public login(useri: User): Observable<{}> {
-        const url = apiUrl + `auth/login`;
+        const url = Util.getUri(apiV1Url) + `login`;
         return this.http.post(url, useri, httpOptions)
             .pipe(
                 catchError(this.handleError('login'))

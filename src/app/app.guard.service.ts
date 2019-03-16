@@ -11,8 +11,7 @@ export class AppGuard implements CanActivate {
     }
 
     canActivate(): Observable<any> {
-        return of(true);
-        /*if (this.auth.checkLogin() === '') {
+        if (this.auth.checkLogin() === '') {
             this.fall();
             return of(false);
         }
@@ -29,11 +28,11 @@ export class AppGuard implements CanActivate {
                     }
                 }),
                 catchError(error => of(false))
-            );*/
+            );
     }
 
     private pass() {
-        // console.log('pass');
+        console.log('pass');
         // this.auth.getProfile();
     }
 

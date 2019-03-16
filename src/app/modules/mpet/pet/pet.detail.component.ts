@@ -27,6 +27,8 @@ export class PetDetailComponent implements OnInit {
                         this.petService.pet.owner_id = this.petService.pet.owners[0].id;
                         this.petService.pet.owner_name = this.petService.pet.owners[0].name;
                         this.petService.pet.owner_phone = this.petService.pet.owners[0].phone_number;
+                        this.petService.pet.facebook = this.petService.pet.owners[0].facebook;
+                        this.petService.pet.email = this.petService.pet.owners[0].email;
                     }
                 });
         } else {
