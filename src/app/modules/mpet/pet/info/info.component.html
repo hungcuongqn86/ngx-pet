@@ -62,49 +62,49 @@
     <h6 *ngIf="!petService.pet.id"><i class="fa fa-paw"></i> Thông tin thú</h6>
     <div class="form-group row">
         <label class="col-md-3 col-form-label" for="name">
-            Tên thú cưng <code class="highlighter-rouge">*</code>
+            Tên thú <code class="highlighter-rouge">*</code>
         </label>
         <div class="col-md-9">
             <input [(ngModel)]="petService.pet.name" #name="ngModel" type="text" id="name"
                    name="name"
                    required
                    class="form-control"
-                   placeholder="Tên thú cưng">
+                   placeholder="Tên thú">
             <div [hidden]="name.valid || name.untouched">
                                 <span *ngIf="name.errors && name.errors.required"
                                       class="badge badge-warning">
-                                    Phải nhập Tên thú cưng!
+                                    Phải nhập Tên thú!
                                 </span>
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-md-3 col-form-label" for="pet_type_id">
-            Loại thú cưng <code class="highlighter-rouge">*</code>
+        <label class="col-md-3 col-form-label" for="species_id">
+            Loài <code class="highlighter-rouge">*</code>
         </label>
         <div class="col-md-9">
-            <select [(ngModel)]="petService.pet.pet_type_id" #pet_type_id="ngModel" required class="form-control"
-                    name="pet_type_id" id="pet_type_id">
-                <option value="null">Chọn loại thú cưng ...</option>
+            <select [(ngModel)]="petService.pet.species_id" #species_id="ngModel" required class="form-control"
+                    name="species_id" id="species_id">
+                <option value="null">Chọn loài ...</option>
                 <option *ngFor="let type of types" [value]="type.id">
                     {{type.name}}
                 </option>
             </select>
-            <div [hidden]="pet_type_id.valid || pet_type_id.untouched">
-                                <span *ngIf="pet_type_id.errors && pet_type_id.errors.required"
+            <div [hidden]="species_id.valid || species_id.untouched">
+                                <span *ngIf="species_id.errors && species_id.errors.required"
                                       class="badge badge-warning">
-                                    Phải chọn loại thú cưng!
+                                    Phải chọn loài!
                                 </span>
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-md-3 col-form-label" for="pet_breed_id">
+        <label class="col-md-3 col-form-label" for="breed_id">
             Giống
         </label>
         <div class="col-md-9">
-            <select [(ngModel)]="petService.pet.pet_breed_id" class="form-control"
-                    name="pet_breed_id" id="pet_breed_id">
+            <select [(ngModel)]="petService.pet.breed_id" class="form-control"
+                    name="breed_id" id="breed_id">
                 <option value="null">Chọn giống ...</option>
                 <option *ngFor="let breed of breeds" [value]="breed.id">
                     {{breed.name}}

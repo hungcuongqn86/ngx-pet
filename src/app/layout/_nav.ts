@@ -1,6 +1,6 @@
 export const navItems = [
     {
-        name: 'Dashboard',
+        name: 'Bảng tổng hợp',
         url: '/dashboard',
         icon: 'icon-speedometer'
     },
