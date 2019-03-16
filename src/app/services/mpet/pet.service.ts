@@ -37,10 +37,10 @@ export class PetService {
     reset() {
         this.pet = {
             id: null
-            , pet_type: null
-            , pet_type_id: null
-            , pet_breed: null
-            , pet_breed_id: null
+            , species: null
+            , species_id: null
+            , breed: null
+            , breed_id: null
             , owners: null
             , owner_id: null
             , owner_name: null
@@ -61,7 +61,7 @@ export class PetService {
             , story: ''
             , diary: ''
             , guest_book: ''
-            , pet_media: null
+            , media: null
             , images: ''
             , status: null
             , is_deleted: 0

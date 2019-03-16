@@ -8,8 +8,8 @@ export interface Species {
 
 export interface Breed {
     id: number;
-    pet_type_id: number;
-    pet_type: Species;
+    species_id: number;
+    species: Species;
     name: string;
     is_deleted: number;
 }
@@ -26,8 +26,8 @@ export interface Media {
 
 export interface Pet {
     id: number;
-    pet_type_id: number;
-    pet_type: Species;
+    species_id: number;
+    species: Species;
     owners: Owner[];
     owner_id: number;
     owner_name: string;
@@ -35,8 +35,8 @@ export interface Pet {
     facebook: string;
     email: string;
     name: string;
-    pet_breed_id: number;
-    pet_breed: Breed;
+    breed_id: number;
+    breed: Breed;
     gender_name: string;
     gender: number;
     colour: string;
@@ -51,7 +51,7 @@ export interface Pet {
     diary: string;
     guest_book: string;
     status: number;
-    pet_media: Media[];
+    media: Media[];
     images: string;
     is_deleted: number;
     created_at: string;

@@ -10,12 +10,12 @@ import {apiV1Url} from '../../const';
 import {LoadingService} from '../../loading.service';
 
 import {Router} from '@angular/router';
-import {Breed, Species} from '../../models/Pet';
+import {Breed} from '../../models/Pet';
 
 @Injectable()
 export class PetBreedService {
     static instance: PetBreedService;
-    private moduleUri = 'mpet/petbreed/';
+    private moduleUri = 'mpet/breed/';
     private handleError: HandleError;
     public search = {key: '', pet_type_id: null};
     public petbreed: Breed;
@@ -37,8 +37,8 @@ export class PetBreedService {
         this.petbreed = {
             id: null
             , name: ''
-            , pet_type_id: null
-            , pet_type: null
+            , species_id: null
+            , species: null
             , is_deleted: 0
         };
     }

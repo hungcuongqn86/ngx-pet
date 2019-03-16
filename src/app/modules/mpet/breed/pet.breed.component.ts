@@ -28,11 +28,11 @@ export class PetBreedComponent implements OnInit {
 
     public addBase() {
         this.petBreedService.petbreed.id = null;
-        this.router.navigate(['/mpet/petbreed/add']);
+        this.router.navigate(['/mpet/breed/add']);
     }
 
     public editBase(id) {
-        this.router.navigate([`/mpet/petbreed/edit/${id}`]);
+        this.router.navigate([`/mpet/breed/edit/${id}`]);
     }
 
     public deleteBase() {
