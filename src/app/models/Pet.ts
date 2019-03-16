@@ -1,15 +1,15 @@
 import {Owner} from './Owner';
 
-export interface PetType {
+export interface Species {
     id: number;
     name: string;
     is_deleted: number;
 }
 
-export interface PetBreed {
+export interface Breed {
     id: number;
     pet_type_id: number;
-    pet_type: PetType;
+    pet_type: Species;
     name: string;
     is_deleted: number;
 }
@@ -27,7 +27,7 @@ export interface Media {
 export interface Pet {
     id: number;
     pet_type_id: number;
-    pet_type: PetType;
+    pet_type: Species;
     owners: Owner[];
     owner_id: number;
     owner_name: string;
@@ -36,7 +36,7 @@ export interface Pet {
     email: string;
     name: string;
     pet_breed_id: number;
-    pet_breed: PetBreed;
+    pet_breed: Breed;
     gender_name: string;
     gender: number;
     colour: string;

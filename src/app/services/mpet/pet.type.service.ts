@@ -10,15 +10,15 @@ import {apiV1Url} from '../../const';
 import {LoadingService} from '../../loading.service';
 
 import {Router} from '@angular/router';
-import {PetType} from '../../models/Pet';
+import {Species} from '../../models/Pet';
 
 @Injectable()
 export class PetTypeService {
     static instance: PetTypeService;
-    private moduleUri = 'mpet/pettype/';
+    private moduleUri = 'mpet/species/';
     private handleError: HandleError;
     public search = {key: ''};
-    public pettype: PetType;
+    public pettype: Species;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,
                 private loadingService: LoadingService) {
@@ -83,17 +83,17 @@ export class PetTypeService {
         }
     }
 
-    public addPetType(pet: PetType): Observable<any> {
+    public addPetType(pet: Species): Observable<any> {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}create`;
-        return this.http.post<PetType>(url, pet)
+        return this.http.post<Species>(url, pet)
             .pipe(
                 catchError(this.handleError('addPetType', pet))
             );
     }
 
-    public editPetType(pet: PetType): Observable<any> {
+    public editPetType(pet: Species): Observable<any> {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}update`;
-        return this.http.put<PetType>(url, pet)
+        return this.http.put<Species>(url, pet)
             .pipe(
                 catchError(this.handleError('editPetType', pet))
             );

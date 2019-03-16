@@ -10,7 +10,7 @@ import {apiV1Url} from '../../const';
 import {LoadingService} from '../../loading.service';
 
 import {Router} from '@angular/router';
-import {PetBreed, PetType} from '../../models/Pet';
+import {Breed, Species} from '../../models/Pet';
 
 @Injectable()
 export class PetBreedService {
@@ -18,7 +18,7 @@ export class PetBreedService {
     private moduleUri = 'mpet/petbreed/';
     private handleError: HandleError;
     public search = {key: '', pet_type_id: null};
-    public petbreed: PetBreed;
+    public petbreed: Breed;
 
     constructor(private router: Router, private http: HttpClient, httpErrorHandler: HttpErrorHandler,
                 private loadingService: LoadingService) {
@@ -85,17 +85,17 @@ export class PetBreedService {
         }
     }
 
-    public addPetBreed(pet: PetBreed): Observable<any> {
+    public addPetBreed(pet: Breed): Observable<any> {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}create`;
-        return this.http.post<PetBreed>(url, pet)
+        return this.http.post<Breed>(url, pet)
             .pipe(
                 catchError(this.handleError('addPetBreed', pet))
             );
     }
 
-    public editPetBreed(pet: PetBreed): Observable<any> {
+    public editPetBreed(pet: Breed): Observable<any> {
         const url = Util.getUri(apiV1Url) + `${this.moduleUri}update`;
-        return this.http.put<PetBreed>(url, pet)
+        return this.http.put<Breed>(url, pet)
             .pipe(
                 catchError(this.handleError('editPetBreed', pet))
             );

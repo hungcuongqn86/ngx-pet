@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PetBreedService} from '../../../services/mpet/pet.breed.service';
-import {PetType} from '../../../models/Pet';
+import {Species} from '../../../models/Pet';
 import {PetTypeService} from '../../../services/mpet/pet.type.service';
 
 @Component({
@@ -12,7 +12,7 @@ import {PetTypeService} from '../../../services/mpet/pet.type.service';
 })
 
 export class PetBreedDetailComponent implements OnInit {
-    types: PetType[];
+    types: Species[];
 
     constructor(private router: Router, private route: ActivatedRoute,
                 public petbreedService: PetBreedService, public petTypeService: PetTypeService) {

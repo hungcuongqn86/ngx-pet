@@ -28,37 +28,37 @@ const routes: Routes = [
         }
     },
     {
-        path: 'pettype', component: PetTypeComponent,
+        path: 'species', component: PetTypeComponent,
         data: {
-            title: 'Loại thú'
+            title: 'Loài'
         }
     },
     {
-        path: 'pettype/add', component: PetTypeDetailComponent,
+        path: 'species/add', component: PetTypeDetailComponent,
         data: {
-            title: 'Thêm mới loại thú'
+            title: 'Thêm mới loài'
         }
     },
     {
-        path: 'pettype/edit/:id', component: PetTypeDetailComponent,
+        path: 'species/edit/:id', component: PetTypeDetailComponent,
         data: {
-            title: 'Chỉnh sửa loại thú'
+            title: 'Chỉnh sửa loài'
         }
     },
     {
-        path: 'petbreed', component: PetBreedComponent,
+        path: 'breed', component: PetBreedComponent,
         data: {
             title: 'Giống'
         }
     },
     {
-        path: 'petbreed/add', component: PetBreedDetailComponent,
+        path: 'breed/add', component: PetBreedDetailComponent,
         data: {
             title: 'Thêm mới giống'
         }
     },
     {
-        path: 'petbreed/edit/:id', component: PetBreedDetailComponent,
+        path: 'breed/edit/:id', component: PetBreedDetailComponent,
         data: {
             title: 'Chỉnh sửa giống'
         }

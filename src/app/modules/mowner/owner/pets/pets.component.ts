@@ -17,7 +17,7 @@ export class PetsComponent {
     }
 
     public searchPets() {
-        this.petService.search = {key: '', pettype: '', owner: this.ownerService.owner.id, limit: 100, page: 1};
+        this.petService.search = {key: '', species: '', owner: this.ownerService.owner.id, limit: 100, page: 1};
         this.petService.getPets()
             .subscribe(pets => {
                 this.pets = pets.data.data;

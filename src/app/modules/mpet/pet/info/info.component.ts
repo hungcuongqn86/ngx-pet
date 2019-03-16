@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {PetService} from '../../../../services/mpet/pet.service';
-import {PetType, PetBreed, Gender} from '../../../../models/Pet';
+import {Species, Breed, Gender} from '../../../../models/Pet';
 import {PetTypeService} from '../../../../services/mpet/pet.type.service';
 import {PetBreedService} from '../../../../services/mpet/pet.breed.service';
 
@@ -11,8 +11,8 @@ import {PetBreedService} from '../../../../services/mpet/pet.breed.service';
 })
 
 export class InfoComponent {
-    types: PetType[];
-    breeds: PetBreed[];
+    types: Species[];
+    breeds: Breed[];
     genders: Gender[];
 
     constructor(public petService: PetService, public petTypeService: PetTypeService, public petBreedService: PetBreedService) {

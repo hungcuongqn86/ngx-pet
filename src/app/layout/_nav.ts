@@ -10,28 +10,28 @@ export const navItems = [
         icon: 'icon-star'
     },*/
     {
-        name: 'Owner',
+        name: 'Chủ thú',
         url: '/mowner/owner',
         icon: 'cui-people'
     },
     {
-        name: 'Pet management',
+        name: 'Quản lý thú',
         url: '/mpet',
         icon: 'icon-puzzle',
         children: [
             {
-                name: 'Pet',
+                name: 'Thú',
                 url: '/mpet/pet',
                 icon: 'icon-puzzle'
             },
             {
-                name: 'Pet type',
-                url: '/mpet/pettype',
+                name: 'Loài',
+                url: '/mpet/species',
                 icon: 'cui-graph'
             },
             {
-                name: 'Pet breed',
-                url: '/mpet/petbreed',
+                name: 'Giống',
+                url: '/mpet/breed',
                 icon: 'fa fa-sitemap'
             }
         ]

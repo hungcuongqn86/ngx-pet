@@ -19,7 +19,8 @@ export class OwnerService {
     public search = {key: '', page_size: 10, page: 1};
     public owner: Owner;
 
-    constructor(private router: Router, private loadingService: LoadingService, private http: HttpClient, httpErrorHandler: HttpErrorHandler) {
+    constructor(private router: Router, private loadingService: LoadingService,
+                private http: HttpClient, httpErrorHandler: HttpErrorHandler) {
         this.handleError = httpErrorHandler.createHandleError('OwnerService');
         if (!this.owner) {
             this.reset();

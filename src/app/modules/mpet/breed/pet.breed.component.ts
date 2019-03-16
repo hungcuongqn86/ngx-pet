@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation, TemplateRef} from '@angular/core';
 import {Router} from '@angular/router';
 import {PetBreedService} from '../../../services/mpet/pet.breed.service';
-import {PetBreed} from '../../../models/Pet';
+import {Breed} from '../../../models/Pet';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
@@ -13,8 +13,8 @@ import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 
 export class PetBreedComponent implements OnInit {
-    petbreed: PetBreed;
-    petbreeds: PetBreed[];
+    petbreed: Breed;
+    petbreeds: Breed[];
     modalRef: BsModalRef;
 
     constructor(public petBreedService: PetBreedService,

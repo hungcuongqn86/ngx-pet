@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation, TemplateRef} from '@angular/core';
 import {Router} from '@angular/router';
 import {PetService} from '../../../services/mpet/pet.service';
 import {PetTypeService} from '../../../services/mpet/pet.type.service';
-import {Pet, PetType} from '../../../models/Pet';
+import {Pet, Species} from '../../../models/Pet';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {UploaderService} from '../../../uploader.service';
@@ -18,13 +18,13 @@ import {UploaderService} from '../../../uploader.service';
 export class PetComponent implements OnInit {
     pet: Pet;
     pets: Pet[];
-    types: PetType[];
+    types: Species[];
     totalItems = 0;
     modalRef: BsModalRef;
 
     constructor(private uploaderService: UploaderService, public petService: PetService, public petTypeService: PetTypeService,
                 private router: Router, private modalService: BsModalService) {
-        this.petService.search = {key: '', pettype: '', owner: null, limit: 15, page: 1};
+        this.petService.search = {key: '', species: '', owner: null, limit: 15, page: 1};
     }
 
     ngOnInit() {
