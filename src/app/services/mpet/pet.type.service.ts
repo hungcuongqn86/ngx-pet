@@ -79,7 +79,7 @@ export class PetTypeService {
 
     private updateSuccess(res: any) {
         if (res.status) {
-            this.router.navigate(['/mpet/pettype']);
+            this.router.navigate(['/mpet/species']);
         }
     }
 

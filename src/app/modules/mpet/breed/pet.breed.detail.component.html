@@ -23,29 +23,29 @@
                     <div class="col-md-12 mb-4">
                         <form novalidate #form="ngForm" class="form-horizontal">
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="pet_type_id">
-                                    Loại thú cưng <code class="highlighter-rouge">*</code>
+                                <label class="col-md-3 col-form-label" for="species_id">
+                                    Loài <code class="highlighter-rouge">*</code>
                                 </label>
                                 <div class="col-md-9">
-                                    <select [(ngModel)]="petbreedService.petbreed.pet_type_id" #pet_type_id="ngModel"
+                                    <select [(ngModel)]="petbreedService.petbreed.species_id" #species_id="ngModel"
                                             required class="form-control"
-                                            name="pet_type_id" id="pet_type_id">
-                                        <option value="null">Chọn loại thú cưng ...</option>
+                                            name="species_id" id="species_id">
+                                        <option value="null">Chọn loài ...</option>
                                         <option *ngFor="let type of types" [value]="type.id">
                                             {{type.name}}
                                         </option>
                                     </select>
-                                    <div [hidden]="pet_type_id.valid || pet_type_id.untouched">
-                                <span *ngIf="pet_type_id.errors && pet_type_id.errors.required"
+                                    <div [hidden]="species_id.valid || species_id.untouched">
+                                <span *ngIf="species_id.errors && species_id.errors.required"
                                       class="badge badge-warning">
-                                    Phải chọn loại thú cưng!
+                                    Phải chọn loài!
                                 </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label" for="name">
-                                    Tên giống thú <code class="highlighter-rouge">*</code>
+                                    Tên giống <code class="highlighter-rouge">*</code>
                                 </label>
                                 <div class="col-md-9">
                                     <input [(ngModel)]="petbreedService.petbreed.name"
@@ -53,11 +53,11 @@
                                            id="name" name="name"
                                            required
                                            class="form-control"
-                                           placeholder="Tên giống thú">
+                                           placeholder="Tên giống">
                                     <div [hidden]="name.valid || name.untouched">
                                 <span *ngIf="name.errors && name.errors.required"
                                       class="badge badge-warning">
-                                    Phải nhập Tên loại thú cưng!
+                                    Phải nhập Tên giống!
                                 </span>
                                     </div>
                                 </div>

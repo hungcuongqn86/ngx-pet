@@ -17,14 +17,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Chi tiết loại thú</strong>
+                    <strong>Chi tiết loài</strong>
                 </div>
                 <div class="card-body">
                     <div class="col-md-12 mb-4">
                         <form novalidate #form="ngForm" class="form-horizontal">
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label" for="name">
-                                    Tên loại thú cưng <code class="highlighter-rouge">*</code>
+                                    Tên loài <code class="highlighter-rouge">*</code>
                                 </label>
                                 <div class="col-md-9">
                                     <input [(ngModel)]="pettypeService.pettype.name"
@@ -36,7 +36,7 @@
                                     <div [hidden]="name.valid || name.untouched">
                                 <span *ngIf="name.errors && name.errors.required"
                                       class="badge badge-warning">
-                                    Phải nhập Tên loại thú cưng!
+                                    Phải nhập Tên loài!
                                 </span>
                                     </div>
                                 </div>

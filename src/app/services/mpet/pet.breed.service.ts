@@ -81,7 +81,7 @@ export class PetBreedService {
 
     private updateSuccess(res: any) {
         if (res.status) {
-            this.router.navigate(['/mpet/petbreed']);
+            this.router.navigate(['/mpet/breed']);
         }
     }
 

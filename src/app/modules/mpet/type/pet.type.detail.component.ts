@@ -34,6 +34,6 @@ export class PetTypeDetailComponent implements OnInit {
     }
 
     public backlist() {
-        this.router.navigate(['/mpet/pettype']);
+        this.router.navigate(['/mpet/species']);
     }
 }

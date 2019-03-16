@@ -48,6 +48,6 @@ export class PetBreedDetailComponent implements OnInit {
     }
 
     public backlist() {
-        this.router.navigate(['/mpet/petbreed']);
+        this.router.navigate(['/mpet/breed']);
     }
 }
